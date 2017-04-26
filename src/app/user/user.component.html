@@ -1,0 +1,13 @@
+<div *ngIf="error" class="alert alert-dismissable alert-danger">{{error}}</div>
+<form class="container form-group form-signin">
+  <div class="form-group">
+    <h4 class="control-label form-signin-heading">Welcome to another Chat App</h4>
+    <div class="input-group">
+      <input class="form-control" type="text" name="userName" [(ngModel)]="userName"
+             placeholder="Write your nickName...">
+      <span class="input-group-btn">
+          <input type="submit" (click)="sendUserName()" class="btn btn-default btn-primary" value="Enviar">
+        </span>
+    </div>
+  </div>
+</form>

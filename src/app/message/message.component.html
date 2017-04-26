@@ -1,0 +1,21 @@
+<div *ngIf="messages.length > 0">
+  <ul *ngFor="let message of messages">
+    <span class="label label-primary">{{message.user.name}}: </span>
+    <div class="well well-sm">
+      <span class="lead">{{message.message}}</span>
+    </div>
+
+  </ul>
+</div>
+<div>
+  <p *ngIf="writing" class="text-info text-left"> {{writing}} esta escribiendo... </p>
+</div>
+<form>
+  <div class="form-group input-group">
+    <input type="text" [(ngModel)]="messageInput" name="message" (keydown)="isWriting()" (keyup)="isNotWriting()"
+           class="form-control" placeholder="Write a message...">
+    <span class="input-group-btn">
+      <input type="submit" (click)="sendMessage()" class="btn btn-default btn-primary" value="Send">
+    </span>
+  </div>
+</form>
