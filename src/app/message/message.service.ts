@@ -30,7 +30,7 @@ export class MessageService {
   }
 
   sendMessage (message:Message) {
-    this.socket.emit('datos', message);
+    this.socket.emit('data', message);
   }
 
 
